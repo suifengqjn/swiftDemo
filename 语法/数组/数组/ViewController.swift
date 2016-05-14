@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     func testArr2(){
         // 数组中保存的都是字符串
-        let arr2 = ["zhangsan33", "lisi33"]
+        let arr2 = ["zhangdfsdfsan33", "lisdfsdfi33", "safsdfsadf"]
         
         // 数组中保存的是 NSObject
         let arr3 = ["zhangsan21", 12]
