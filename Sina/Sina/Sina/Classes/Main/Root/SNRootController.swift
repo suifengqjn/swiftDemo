@@ -8,25 +8,54 @@
 
 import UIKit
 
-class SNRootController: UITabBarController {
+class SNRootController: SNTabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        ///注意：IOS7 以后
+        tabBar.tintColor = UIColor.orange()
+        
+        buildControllers()
     }
 
     
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    
+    // MARK: - 创建首页子控制器
+    private func buildControllers() -> Void {
+        
+        /*  添加一个子控制器基本属性
+        let homeVC = TBHomeController()
+        homeVC.tabBarItem.image = UIImage(named: "tabbar_home")
+        homeVC.tabBarItem.selectedImage = UIImage(named: "tabbar_home_highlighted")
+        homeVC.tabBarItem.title = "首页"
+        homeVC.navigationItem.title = "首页"
+        let homeNav = SNNavigationController()
+        homeNav.addChildViewController(homeVC)
+        addChildViewController(homeNav)
+        */
+        
+        addChildControllers(childController: TBHomeController(), title: "首页", imageName: "tabbar_home")
+        addChildControllers(childController: TBHomeController(), title: "消息", imageName: "tabbar_message_center")
+        addChildControllers(childController: TBHomeController(), title: "发现", imageName: "tabbar_discover")
+        addChildControllers(childController: TBHomeController(), title: "我", imageName: "tabbar_profile")
+        
     }
-    */
+    
+    
+    private func addChildControllers(childController: UIViewController, title: String, imageName: String) -> Void {
+        
+        childController.tabBarItem.image = UIImage(named: imageName)
+        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
+        childController.tabBarItem.title = title
+        childController.navigationItem.title = title
+        let homeNav = SNNavigationController()
+        homeNav.addChildViewController(childController)
+        addChildViewController(homeNav)
+        
+    }
 
 }

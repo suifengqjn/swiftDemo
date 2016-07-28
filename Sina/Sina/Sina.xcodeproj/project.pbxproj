@@ -14,6 +14,13 @@
 		1DE654241D4A4A44001BCA70 /* SNRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654231D4A4A44001BCA70 /* SNRootController.swift */; };
 		1DE654281D4A4ED2001BCA70 /* SNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654271D4A4ED2001BCA70 /* SNViewController.swift */; };
 		1DE6542A1D4A4EE3001BCA70 /* SNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654291D4A4EE3001BCA70 /* SNTableViewController.swift */; };
+		1DE6542C1D4A4F9A001BCA70 /* TBHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6542B1D4A4F9A001BCA70 /* TBHomeController.swift */; };
+		1DE6542E1D4A4FAD001BCA70 /* TBDiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6542D1D4A4FAD001BCA70 /* TBDiscoverController.swift */; };
+		1DE654301D4A4FC1001BCA70 /* TBMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6542F1D4A4FC1001BCA70 /* TBMessageController.swift */; };
+		1DE654321D4A4FE8001BCA70 /* TBProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654311D4A4FE8001BCA70 /* TBProfileController.swift */; };
+		1DE654341D4A5007001BCA70 /* TBPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654331D4A5007001BCA70 /* TBPostController.swift */; };
+		1DE654361D4A507D001BCA70 /* SNNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654351D4A507D001BCA70 /* SNNavigationController.swift */; };
+		1DE654381D4A50A9001BCA70 /* SNTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654371D4A50A9001BCA70 /* SNTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,13 @@
 		1DE654231D4A4A44001BCA70 /* SNRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNRootController.swift; sourceTree = "<group>"; };
 		1DE654271D4A4ED2001BCA70 /* SNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNViewController.swift; sourceTree = "<group>"; };
 		1DE654291D4A4EE3001BCA70 /* SNTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNTableViewController.swift; sourceTree = "<group>"; };
+		1DE6542B1D4A4F9A001BCA70 /* TBHomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBHomeController.swift; sourceTree = "<group>"; };
+		1DE6542D1D4A4FAD001BCA70 /* TBDiscoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBDiscoverController.swift; sourceTree = "<group>"; };
+		1DE6542F1D4A4FC1001BCA70 /* TBMessageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBMessageController.swift; sourceTree = "<group>"; };
+		1DE654311D4A4FE8001BCA70 /* TBProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBProfileController.swift; sourceTree = "<group>"; };
+		1DE654331D4A5007001BCA70 /* TBPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBPostController.swift; sourceTree = "<group>"; };
+		1DE654351D4A507D001BCA70 /* SNNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNNavigationController.swift; sourceTree = "<group>"; };
+		1DE654371D4A50A9001BCA70 /* SNTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +96,8 @@
 			children = (
 				1DE654271D4A4ED2001BCA70 /* SNViewController.swift */,
 				1DE654291D4A4EE3001BCA70 /* SNTableViewController.swift */,
+				1DE654351D4A507D001BCA70 /* SNNavigationController.swift */,
+				1DE654371D4A50A9001BCA70 /* SNTabBarController.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
@@ -91,9 +107,9 @@
 			children = (
 				1D2C58851D490278004C4671 /* CommomControllers */,
 				1D2C58871D490278004C4671 /* Home */,
-				1D2C58861D490278004C4671 /* Discover */,
-				1D2C58891D490278004C4671 /* Post */,
 				1D2C58881D490278004C4671 /* Message */,
+				1D2C58891D490278004C4671 /* Post */,
+				1D2C58861D490278004C4671 /* Discover */,
 				1D2C588A1D490278004C4671 /* Profile */,
 				1D2C588B1D490278004C4671 /* Root */,
 			);
@@ -110,6 +126,7 @@
 		1D2C58861D490278004C4671 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				1DE6542D1D4A4FAD001BCA70 /* TBDiscoverController.swift */,
 			);
 			path = Discover;
 			sourceTree = "<group>";
@@ -117,6 +134,7 @@
 		1D2C58871D490278004C4671 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1DE6542B1D4A4F9A001BCA70 /* TBHomeController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -124,6 +142,7 @@
 		1D2C58881D490278004C4671 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				1DE6542F1D4A4FC1001BCA70 /* TBMessageController.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -131,6 +150,7 @@
 		1D2C58891D490278004C4671 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				1DE654331D4A5007001BCA70 /* TBPostController.swift */,
 			);
 			path = Post;
 			sourceTree = "<group>";
@@ -138,6 +158,7 @@
 		1D2C588A1D490278004C4671 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				1DE654311D4A4FE8001BCA70 /* TBProfileController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -240,9 +261,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D2C58931D490278004C4671 /* UIView+AutoLayout.swift in Sources */,
+				1DE654321D4A4FE8001BCA70 /* TBProfileController.swift in Sources */,
 				1DE654281D4A4ED2001BCA70 /* SNViewController.swift in Sources */,
 				1DE654241D4A4A44001BCA70 /* SNRootController.swift in Sources */,
+				1DE654301D4A4FC1001BCA70 /* TBMessageController.swift in Sources */,
+				1DE654341D4A5007001BCA70 /* TBPostController.swift in Sources */,
 				1DE6542A1D4A4EE3001BCA70 /* SNTableViewController.swift in Sources */,
+				1DE654361D4A507D001BCA70 /* SNNavigationController.swift in Sources */,
+				1DE654381D4A50A9001BCA70 /* SNTabBarController.swift in Sources */,
+				1DE6542E1D4A4FAD001BCA70 /* TBDiscoverController.swift in Sources */,
+				1DE6542C1D4A4F9A001BCA70 /* TBHomeController.swift in Sources */,
 				1D2C586F1D4900A1004C4671 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
