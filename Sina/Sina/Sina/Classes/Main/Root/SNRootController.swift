@@ -14,6 +14,7 @@ class SNRootController: SNTabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        ///sdfsdfasdfasdfasd
         ///注意：IOS7 以后
         tabBar.tintColor = UIColor.orange()
         
