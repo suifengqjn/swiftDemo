@@ -18,9 +18,16 @@ class SNRootController: SNTabBarController {
         ///注意：IOS7 以后
         tabBar.tintColor = UIColor.orange()
         
+        // 动态添加子控制器
         buildDynamicContrillers()
     }
 
+    ///ios 7 以后 建议在viewWillAppear 里面设置frame
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        buildPostBtn()
+        
+    }
     
     // MARK: - 通过json数据初始化，创建首页子控制器
     
@@ -113,20 +120,11 @@ class SNRootController: SNTabBarController {
         
         addChildControllers(childController: TBHomeController(), title: "首页", imageName: "tabbar_home")
         addChildControllers(childController: TBHomeController(), title: "消息", imageName: "tabbar_message_center")
+        addChildControllers(childController: TBHomeController(), title: "", imageName: "")
         addChildControllers(childController: TBHomeController(), title: "发现", imageName: "tabbar_discover")
         addChildControllers(childController: TBHomeController(), title: "我", imageName: "tabbar_profile")
         
-        //获取命名空间
-        let mmkjStr = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String;
-        print(mmkjStr);
         
-        let cls:AnyClass? = NSClassFromString("Sina." + "TBHomeController")
-        
-        let VCClass = cls as! UIViewController.Type;
-        
-        let VC = VCClass.init()
-        
-        print(VC);
     }
     
     
@@ -143,4 +141,44 @@ class SNRootController: SNTabBarController {
         
     }
 
+    // MARK: - 懒加载 创建加号 按钮
+    private lazy var postBtn: UIButton = {
+        
+        let btn = UIButton()
+        
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add"), for: UIControlState.normal)
+        btn.setImage(UIImage(named:"tabbar_compose_icon_add_highlighted"), for: UIControlState.selected)
+        
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button"), for: UIControlState.normal);
+        btn.setBackgroundImage(UIImage(named:"tabbar_compose_button_highlighted"), for: UIControlState.selected);
+        
+        btn.addTarget(self, action:#selector(postBtnClick), for: UIControlEvents.touchUpInside)
+        
+        return btn
+        
+    }()
+    
+    // MARK: - 设置加号按钮
+    private func buildPostBtn() {
+        
+        tabBar.addSubview(postBtn)
+        
+        // 1.计算按钮宽度
+        let width = kScreenWidth / CGFloat(viewControllers!.count)
+        // 2.创建按钮frame
+        let rect = CGRect(x: 0, y: 0, width: width, height: tabBar.bounds.height)
+        // 3.设置按钮frame和偏移位
+        /// 第一个参数： frame的大小
+        /// 第二个参数： x轴方向偏移的大小
+        /// 第三个参数： x轴方向偏移的大小
+        postBtn.frame = rect.offsetBy(dx: width * 2, dy: 0)
+        
+    
+    }
+    
+    ///按钮点击事件的调用是由 运行循环 监听并且以消息机制传递的，因此，按钮监听函数不能设置为 private
+    // MARK: - 按钮点击
+    func postBtnClick() {
+        print(#function)
+    }
 }
