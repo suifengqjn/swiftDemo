@@ -25,6 +25,8 @@ class SNRootController: SNTabBarController {
     
     
     
+    
+    
     // MARK: - 创建首页子控制器
     private func buildControllers() -> Void {
         
@@ -44,11 +46,23 @@ class SNRootController: SNTabBarController {
         addChildControllers(childController: TBHomeController(), title: "发现", imageName: "tabbar_discover")
         addChildControllers(childController: TBHomeController(), title: "我", imageName: "tabbar_profile")
         
+        //获取命名空间
+        let mmkjStr = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String;
+        print(mmkjStr);
+        
+        let cls:AnyClass? = NSClassFromString("Sina." + "TBHomeController")
+        
+        let VCClass = cls as! UIViewController.Type;
+        
+        let VC = VCClass.init()
+        
+        print(VC);
     }
     
     
     private func addChildControllers(childController: UIViewController, title: String, imageName: String) -> Void {
         
+        print(childController);
         childController.tabBarItem.image = UIImage(named: imageName)
         childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
         childController.tabBarItem.title = title
