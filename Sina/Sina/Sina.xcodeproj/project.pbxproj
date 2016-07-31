@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D29E1041D4DEA2200352653 /* TBNullController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29E1031D4DEA2200352653 /* TBNullController.swift */; };
 		1D29E1071D4DEFB300352653 /* Prifix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29E1061D4DEFB300352653 /* Prifix.swift */; };
+		1D29E10A1D4E057B00352653 /* TBVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D29E1091D4E057B00352653 /* TBVisitorView.swift */; };
 		1D2C586F1D4900A1004C4671 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C586E1D4900A1004C4671 /* AppDelegate.swift */; };
 		1D2C58761D4900A1004C4671 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2C58751D4900A1004C4671 /* Assets.xcassets */; };
 		1D2C58921D490278004C4671 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D2C588D1D490278004C4671 /* MainVCSettings.json */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		1D29E1031D4DEA2200352653 /* TBNullController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBNullController.swift; sourceTree = "<group>"; };
 		1D29E1061D4DEFB300352653 /* Prifix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Prifix.swift; sourceTree = "<group>"; };
+		1D29E1091D4E057B00352653 /* TBVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBVisitorView.swift; sourceTree = "<group>"; };
 		1D2C586B1D4900A1004C4671 /* Sina.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sina.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2C586E1D4900A1004C4671 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D2C58751D4900A1004C4671 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		1D29E1081D4E054D00352653 /* commomView */ = {
+			isa = PBXGroup;
+			children = (
+				1D29E1091D4E057B00352653 /* TBVisitorView.swift */,
+			);
+			path = commomView;
+			sourceTree = "<group>";
+		};
 		1D2C58621D4900A1004C4671 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +105,7 @@
 		1D2C58801D490278004C4671 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1D29E1081D4E054D00352653 /* commomView */,
 				1D2C58811D490278004C4671 /* BaseClass */,
 				1D2C58841D490278004C4671 /* Main */,
 				1D2C588C1D490278004C4671 /* Resource */,
@@ -274,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D29E10A1D4E057B00352653 /* TBVisitorView.swift in Sources */,
 				1D29E1041D4DEA2200352653 /* TBNullController.swift in Sources */,
 				1D2C58931D490278004C4671 /* UIView+AutoLayout.swift in Sources */,
 				1DE654321D4A4FE8001BCA70 /* TBProfileController.swift in Sources */,
