@@ -14,7 +14,10 @@ class TBHomeController: SNTableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        visitorView?.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
+        if !login {
+             visitorView?.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
+        }
+       
     }
 
     

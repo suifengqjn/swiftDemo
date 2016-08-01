@@ -26,11 +26,24 @@ class SNTableViewController: UITableViewController {
     private func setupVisitor()
     {
         visitorView = TBVisitorView()
-        
+        visitorView?.delegate = self
         view = visitorView
     }
 
 
-    
+}
 
+
+
+extension SNTableViewController: TBVisitorViewDelegate {
+    
+    // MARK - TBVisitorViewDelegate
+    func registerBtnClick() {
+        
+    }
+    
+    
+    func loginBtnClick() {
+        
+    }
 }

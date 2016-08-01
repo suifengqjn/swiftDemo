@@ -8,8 +8,43 @@
 
 import UIKit
 
-class TBVisitorView: UIView {
+///swift 中如何定义协议
+protocol TBVisitorViewDelegate: NSObjectProtocol {
+    //登入代理
+    func loginBtnClick()
+    
+    //登入代理
+    func registerBtnClick()
+}
 
+class TBVisitorView: UIView {
+    
+    
+    ///定义一个属性保存代理对象 , 一定要加上weak
+    weak var delegate: TBVisitorViewDelegate?
+    
+
+    
+    /**
+     设置未登录界面
+     
+     :param: isHome    是否是首页
+     :param: imageName 需要展示的图标名称
+     :param: message   需要展示的文本内容
+     */
+    
+    func setupVisitorInfo(_ isHome: Bool, imageName: String, message: String){
+        
+        
+        iconView.isHidden = !isHome
+        messageLabel.text = message
+        homeIconView.image = UIImage(named: imageName)
+        
+        if isHome{
+            startAnimation()
+        }
+    }
+    
    override init(frame: CGRect) {
     
     super.init(frame: frame)
@@ -25,17 +60,7 @@ class TBVisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
  
-    func setupVisitorInfo(_ isHome: Bool, imageName: String, message: String){
-        
-        
-        iconView.isHidden = !isHome
-        messageLabel.text = message
-        homeIconView.image = UIImage(named: imageName)
-        
-        if isHome{
-            startAnimation()
-        }
-    }
+    
     
     /**
      开始动画
@@ -91,11 +116,11 @@ class TBVisitorView: UIView {
     
     //MARK: - 按钮点击事件
     func registerBtnClick() {
-        
+        delegate?.registerBtnClick()
     }
     
     func loginBtnClick() {
-        
+        delegate?.loginBtnClick()
     }
     
     // MARK: - 懒加载控件
