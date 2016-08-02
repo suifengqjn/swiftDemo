@@ -14,14 +14,9 @@ class SNTabBarController: UITabBarController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action: #selector(leftBarButtonClick))
-    }
-
-    
-    func leftBarButtonClick() {
         
     }
-    
+
     
     
     

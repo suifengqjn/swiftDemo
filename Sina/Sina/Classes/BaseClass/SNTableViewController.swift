@@ -11,12 +11,12 @@ import UIKit
 class SNTableViewController: UITableViewController {
 
     // 定义变量保存用户是否登录
-    var login:Bool = false
+    var userLogin:Bool = false
     var visitorView: TBVisitorView?
     
     override func loadView() {
         
-        login ? super.loadView() : setupVisitor()
+        userLogin ? super.loadView() : setupVisitor()
         
     }
 
@@ -25,9 +25,16 @@ class SNTableViewController: UITableViewController {
      */
     private func setupVisitor()
     {
-        visitorView = TBVisitorView()
-        visitorView?.delegate = self
-        view = visitorView
+        let customView = TBVisitorView()
+        customView.delegate = self
+        view = customView;
+        visitorView = customView;
+
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action: #selector(registerBtnClick))
+        
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.plain, target: self, action: #selector(loginBtnClick))
+        
     }
 
 

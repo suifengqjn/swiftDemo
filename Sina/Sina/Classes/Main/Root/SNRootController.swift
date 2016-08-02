@@ -82,7 +82,7 @@ class SNRootController: SNTabBarController {
         let mmkjStr = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String;
         
         //2. 通过字符串转类
-        let cls:AnyClass? = NSClassFromString(mmkjStr + "." + "TBHomeController")
+        let cls:AnyClass? = NSClassFromString(mmkjStr + "." + childController)
         
         //3. 把类指定成控制器类型
         let VCClass = cls as! UIViewController.Type;
@@ -95,9 +95,10 @@ class SNRootController: SNTabBarController {
         VC.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
         VC.tabBarItem.title = title
         VC.navigationItem.title = title
-        let homeNav = SNNavigationController()
-        homeNav.addChildViewController(VC)
-        addChildViewController(homeNav)
+        
+        let Nav = SNNavigationController()
+        Nav.addChildViewController(VC)
+        addChildViewController(Nav)
         
     }
     
@@ -135,6 +136,7 @@ class SNRootController: SNTabBarController {
         childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
         childController.tabBarItem.title = title
         childController.navigationItem.title = title
+        
         let homeNav = SNNavigationController()
         homeNav.addChildViewController(childController)
         addChildViewController(homeNav)
