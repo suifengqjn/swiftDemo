@@ -11,7 +11,7 @@ import UIKit
 class SNTableViewController: UITableViewController {
 
     // 定义变量保存用户是否登录
-    var userLogin:Bool = false
+    var userLogin:Bool = true //false
     var visitorView: TBVisitorView?
     
     override func loadView() {
