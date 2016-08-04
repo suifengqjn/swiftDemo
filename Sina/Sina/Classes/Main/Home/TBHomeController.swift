@@ -44,11 +44,20 @@ class TBHomeController: SNTableViewController {
         rightBtn.sizeToFit()
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
          */
+        //初始化左右按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButton(imageName: "navigationbar_friendattention", target: self, action: #selector(leftBarClick))
         
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButton(imageName: "navigationbar_pop", target: self, action: #selector(rightBarClick))
+        
+        //初始化标题按钮
+        let titleBtn = TBNavTitleButton()
+        titleBtn.setTitle("夜千寻墨", for: UIControlState.normal)
+        titleBtn.addTarget(self, action: #selector(navTitleBtnClick(_:)), for: UIControlEvents.touchUpInside)
+        navigationItem.titleView = titleBtn
+        
 
     }
+
     
     // MARK: - action
     func leftBarClick() {
@@ -57,6 +66,10 @@ class TBHomeController: SNTableViewController {
     
     func rightBarClick() {
         
+    }
+    
+    func navTitleBtnClick(_ btn: TBNavTitleButton) {
+        btn.isSelected = !btn.isSelected
     }
 
 }
