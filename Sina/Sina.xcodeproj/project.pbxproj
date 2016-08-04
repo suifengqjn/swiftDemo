@@ -16,6 +16,8 @@
 		1D2C58931D490278004C4671 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C588F1D490278004C4671 /* UIView+AutoLayout.swift */; };
 		1D314C3F1D5248AB00A96712 /* UIBarButtonItem+Addition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D314C3E1D5248AB00A96712 /* UIBarButtonItem+Addition.swift */; };
 		1D7E87641D5379B0004101CA /* TBNavTitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E87631D5379B0004101CA /* TBNavTitleButton.swift */; };
+		1D7E87671D5387E2004101CA /* TBHomePopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E87661D5387E2004101CA /* TBHomePopoverController.swift */; };
+		1D7E87691D538A48004101CA /* TBPopPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E87681D538A48004101CA /* TBPopPresentationController.swift */; };
 		1DE654241D4A4A44001BCA70 /* SNRootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654231D4A4A44001BCA70 /* SNRootController.swift */; };
 		1DE654281D4A4ED2001BCA70 /* SNViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654271D4A4ED2001BCA70 /* SNViewController.swift */; };
 		1DE6542A1D4A4EE3001BCA70 /* SNTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE654291D4A4EE3001BCA70 /* SNTableViewController.swift */; };
@@ -40,6 +42,8 @@
 		1D2C588F1D490278004C4671 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		1D314C3E1D5248AB00A96712 /* UIBarButtonItem+Addition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Addition.swift"; sourceTree = "<group>"; };
 		1D7E87631D5379B0004101CA /* TBNavTitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBNavTitleButton.swift; sourceTree = "<group>"; };
+		1D7E87661D5387E2004101CA /* TBHomePopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBHomePopoverController.swift; sourceTree = "<group>"; };
+		1D7E87681D538A48004101CA /* TBPopPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBPopPresentationController.swift; sourceTree = "<group>"; };
 		1DE654231D4A4A44001BCA70 /* SNRootController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNRootController.swift; sourceTree = "<group>"; };
 		1DE654271D4A4ED2001BCA70 /* SNViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNViewController.swift; sourceTree = "<group>"; };
 		1DE654291D4A4EE3001BCA70 /* SNTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SNTableViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		1D2C58871D490278004C4671 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1D7E87651D538390004101CA /* Popover */,
 				1DE6542B1D4A4F9A001BCA70 /* TBHomeController.swift */,
 			);
 			path = Home;
@@ -224,6 +229,15 @@
 				1D314C3E1D5248AB00A96712 /* UIBarButtonItem+Addition.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		1D7E87651D538390004101CA /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				1D7E87661D5387E2004101CA /* TBHomePopoverController.swift */,
+				1D7E87681D538A48004101CA /* TBPopPresentationController.swift */,
+			);
+			path = Popover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,8 +323,10 @@
 				1DE654301D4A4FC1001BCA70 /* TBMessageController.swift in Sources */,
 				1DE654341D4A5007001BCA70 /* TBPostController.swift in Sources */,
 				1D29E1071D4DEFB300352653 /* Prifix.swift in Sources */,
+				1D7E87671D5387E2004101CA /* TBHomePopoverController.swift in Sources */,
 				1DE6542A1D4A4EE3001BCA70 /* SNTableViewController.swift in Sources */,
 				1DE654361D4A507D001BCA70 /* SNNavigationController.swift in Sources */,
+				1D7E87691D538A48004101CA /* TBPopPresentationController.swift in Sources */,
 				1DE654381D4A50A9001BCA70 /* SNTabBarController.swift in Sources */,
 				1DE6542E1D4A4FAD001BCA70 /* TBDiscoverController.swift in Sources */,
 				1DE6542C1D4A4F9A001BCA70 /* TBHomeController.swift in Sources */,
@@ -415,6 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Sina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suifeng.Sina;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -428,6 +445,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = Sina/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.suifeng.Sina;
 				PRODUCT_NAME = "$(TARGET_NAME)";

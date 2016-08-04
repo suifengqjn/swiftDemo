@@ -66,10 +66,32 @@ class TBHomeController: SNTableViewController {
     
     func rightBarClick() {
         
+        
+        
     }
     
     func navTitleBtnClick(_ btn: TBNavTitleButton) {
-        btn.isSelected = !btn.isSelected
+        
+        let VC = TBHomePopoverController()
+        //1. 设置转场代理
+        //默认情况下modal会移除以前控制器的view ，替换为当前控制器的view
+        //如果自定义转场，就不会移除以前控制器的view
+        VC.transitioningDelegate = self
+        //2. 设置转场样式
+        VC.modalPresentationStyle = UIModalPresentationStyle.custom
+        present(VC, animated: true, completion: nil)
+        
     }
 
+}
+
+
+
+extension TBHomeController: UIViewControllerTransitioningDelegate {
+    
+    //谁来实现转场动画 IOS 8 新增的方法
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        
+        return TBPopPresentationController(presentedViewController: presented, presenting: presenting)
+    }
 }
