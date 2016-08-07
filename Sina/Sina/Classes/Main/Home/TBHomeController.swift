@@ -20,14 +20,10 @@ class TBHomeController: SNTableViewController {
         }
        
         setUpNav()
+        
     }
 
-    
-    
-
-    
     // MARK: - Navigation
-
     private func setUpNav() {
         /*
         // left bar button 
@@ -55,10 +51,14 @@ class TBHomeController: SNTableViewController {
         titleBtn.addTarget(self, action: #selector(navTitleBtnClick(_:)), for: UIControlEvents.touchUpInside)
         navigationItem.titleView = titleBtn
         
-
+        NotificationCenter.default.addObserver(self, selector: #selector(TBHomeController.titleBtnChange), name: NSNotification.Name(rawValue: TBHomePopoverAnimatorWillPresent), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TBHomeController.titleBtnChange), name: NSNotification.Name(rawValue: TBHomePopoverAnimatorWillDismiss), object: nil)
     }
 
-    
+    func titleBtnChange() {
+        let btn = navigationItem.titleView as! TBNavTitleButton
+        btn.isSelected = !btn.isSelected
+    }
     // MARK: - action
     func leftBarClick() {
         print("ffff")
@@ -67,31 +67,30 @@ class TBHomeController: SNTableViewController {
     func rightBarClick() {
         
         
-        
     }
     
     func navTitleBtnClick(_ btn: TBNavTitleButton) {
         
+
         let VC = TBHomePopoverController()
         //1. 设置转场代理
         //默认情况下modal会移除以前控制器的view ，替换为当前控制器的view
         //如果自定义转场，就不会移除以前控制器的view
-        VC.transitioningDelegate = self
+       // VC.transitioningDelegate = self
+        VC.transitioningDelegate = popverAnimator
         //2. 设置转场样式
         VC.modalPresentationStyle = UIModalPresentationStyle.custom
         present(VC, animated: true, completion: nil)
         
     }
-
-}
-
-
-
-extension TBHomeController: UIViewControllerTransitioningDelegate {
     
-    //谁来实现转场动画 IOS 8 新增的方法
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        
-        return TBPopPresentationController(presentedViewController: presented, presenting: presenting)
-    }
+    // MARK: - 懒加载popover
+    // 一定要定义一个属性来报错自定义转场对象, 代理是弱引用，
+    //不能 transitioningDelegate = TBHomePopoverAnimator()
+    lazy var popverAnimator: TBHomePopoverAnimator = {
+        let pop = TBHomePopoverAnimator()
+        pop.presentFrame = CGRect(x: 20, y: 50, width: 200, height: 300)
+       return pop
+    }()
 }
+

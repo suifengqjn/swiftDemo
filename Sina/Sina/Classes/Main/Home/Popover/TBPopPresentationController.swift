@@ -11,6 +11,7 @@ import UIKit
 
 class TBPopPresentationController: UIPresentationController {
     
+    var presentFrame: CGRect = CGRect.zero
    /// presentedViewController  被展现控制器
     /// presentingViewController  发起控制器
     /// 负责实现转场动画的对象
@@ -22,7 +23,12 @@ class TBPopPresentationController: UIPresentationController {
     override func containerViewWillLayoutSubviews() {
         // containerView  容器视图
         // presentedView  被展现的视图
-        presentedView()?.frame = CGRect(x: 100, y: 50, width: 200, height: 300)
+        if presentFrame == CGRect.zero {
+            presentedView()?.frame = CGRect(x: 20, y: 50, width: 200, height: 100)
+        } else {
+            presentedView()?.frame = presentFrame
+        }
+        
         
         
         containerView?.insertSubview(coverView, at: 0)

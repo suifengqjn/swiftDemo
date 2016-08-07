@@ -13,9 +13,9 @@ class TBNavTitleButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setTitleColor(UIColor.darkGray(), for: UIControlState.normal)
-        setImage(UIImage(named: "navigationbar_arrow_down"), for: UIControlState.normal)
-        setImage(UIImage(named: "navigationbar_arrow_up"), for: UIControlState.highlighted)
+        setTitleColor(UIColor.darkGray(), for: UIControlState())
+        setImage(UIImage(named: "navigationbar_arrow_down"), for: UIControlState())
+        setImage(UIImage(named: "navigationbar_arrow_up"), for: UIControlState.selected)
         self.sizeToFit()
     }
     
