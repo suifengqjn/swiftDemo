@@ -65,7 +65,9 @@ class TBHomeController: SNTableViewController {
     }
     
     func rightBarClick() {
-        
+        let sb = UIStoryboard.init(name: "QRCode", bundle: nil)
+        let QRVC = sb.instantiateInitialViewController()
+        present(QRVC!, animated: true, completion: nil)
         
     }
     
