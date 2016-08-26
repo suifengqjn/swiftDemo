@@ -7,12 +7,12 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 class TBHomeController: SNTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         if !userLogin {
              visitorView?.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
@@ -62,6 +62,7 @@ class TBHomeController: SNTableViewController {
     // MARK: - action
     func leftBarClick() {
         print("ffff")
+        SVProgressHUD.show(withStatus: "dfsfsadfasdf")
     }
     
     func rightBarClick() {

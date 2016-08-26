@@ -99,6 +99,7 @@ class TBQRCodeController: UIViewController {
     private lazy var deviceInput: AVCaptureDeviceInput? = {
         // 获取摄像头
         let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
+        if (device == nil) {return nil}
         do{
             // 创建输入对象
             let input = try AVCaptureDeviceInput(device: device)
