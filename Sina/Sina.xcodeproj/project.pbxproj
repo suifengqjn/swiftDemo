@@ -20,6 +20,7 @@
 		1D7E87691D538A48004101CA /* TBPopPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7E87681D538A48004101CA /* TBPopPresentationController.swift */; };
 		1D977F261D605AA200BDA5D5 /* TBQRCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D977F251D605AA200BDA5D5 /* TBQRCardController.swift */; };
 		1DACEF121D55D35400FE80F3 /* TBHomePopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DACEF111D55D35400FE80F3 /* TBHomePopoverAnimator.swift */; };
+		1DD65C871D84570200BA342A /* SinaOAuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD65C861D84570200BA342A /* SinaOAuthController.swift */; };
 		1DDB97511D58BD9F004B28A6 /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1DDB97501D58BD9F004B28A6 /* QRCode.storyboard */; };
 		1DDB97531D58BF48004B28A6 /* TBQRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB97521D58BF48004B28A6 /* TBQRCodeController.swift */; };
 		1DE1D5991D634EAB0090AD63 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE1D5981D634EAB0090AD63 /* iToast.m */; };
@@ -68,6 +69,7 @@
 		1D7E87681D538A48004101CA /* TBPopPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBPopPresentationController.swift; sourceTree = "<group>"; };
 		1D977F251D605AA200BDA5D5 /* TBQRCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBQRCardController.swift; sourceTree = "<group>"; };
 		1DACEF111D55D35400FE80F3 /* TBHomePopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBHomePopoverAnimator.swift; sourceTree = "<group>"; };
+		1DD65C861D84570200BA342A /* SinaOAuthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinaOAuthController.swift; sourceTree = "<group>"; };
 		1DDB97501D58BD9F004B28A6 /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
 		1DDB97521D58BF48004B28A6 /* TBQRCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TBQRCodeController.swift; sourceTree = "<group>"; };
 		1DE1D5911D634C970090AD63 /* Sina-bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sina-bridge.h"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		1D2C58801D490278004C4671 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				1DD65C841D84554000BA342A /* Third */,
 				1D314C3D1D52483E00A96712 /* Category */,
 				1D29E1081D4E054D00352653 /* commomView */,
 				1D2C58811D490278004C4671 /* BaseClass */,
@@ -278,6 +281,22 @@
 				1DACEF111D55D35400FE80F3 /* TBHomePopoverAnimator.swift */,
 			);
 			path = Popover;
+			sourceTree = "<group>";
+		};
+		1DD65C841D84554000BA342A /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				1DD65C851D84554000BA342A /* SinaOAuth */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		1DD65C851D84554000BA342A /* SinaOAuth */ = {
+			isa = PBXGroup;
+			children = (
+				1DD65C861D84570200BA342A /* SinaOAuthController.swift */,
+			);
+			path = SinaOAuth;
 			sourceTree = "<group>";
 		};
 		1DDB974F1D58BD2F004B28A6 /* QRCode */ = {
@@ -465,6 +484,7 @@
 				1DE1D59C1D63521C0090AD63 /* NetWorkTool.swift in Sources */,
 				1D29E1071D4DEFB300352653 /* Prifix.swift in Sources */,
 				1D7E87671D5387E2004101CA /* TBHomePopoverController.swift in Sources */,
+				1DD65C871D84570200BA342A /* SinaOAuthController.swift in Sources */,
 				1DE6542A1D4A4EE3001BCA70 /* SNTableViewController.swift in Sources */,
 				1DE654361D4A507D001BCA70 /* SNNavigationController.swift in Sources */,
 				1D7E87691D538A48004101CA /* TBPopPresentationController.swift in Sources */,

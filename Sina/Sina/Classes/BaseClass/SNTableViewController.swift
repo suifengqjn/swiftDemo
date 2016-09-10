@@ -11,7 +11,7 @@ import UIKit
 class SNTableViewController: UITableViewController {
 
     // 定义变量保存用户是否登录
-    var userLogin:Bool = true //false
+    var userLogin:Bool = false //false
     var visitorView: TBVisitorView?
     
     override func loadView() {
@@ -51,6 +51,8 @@ extension SNTableViewController: TBVisitorViewDelegate {
     
     
     func loginBtnClick() {
-        
+         let auth = SinaOAuthController()
+        let navAuth = UINavigationController(rootViewController: auth)
+        present(navAuth, animated: true, completion: nil)
     }
 }
