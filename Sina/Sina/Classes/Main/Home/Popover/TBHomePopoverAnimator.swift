@@ -77,10 +77,10 @@ class TBHomePopoverAnimator: NSObject, UIViewControllerTransitioningDelegate, UI
         
         ///展开
         if isPresent {
-            let toVC = transitionContext.view(forKey: UITransitionContextToViewKey)
+            let toVC = transitionContext.view(forKey: UITransitionContextViewKey.to)
             toVC?.transform = CGAffineTransform(scaleX: 1.0, y: 0)
             // 注意: 一定要将视图添加到容器上
-            transitionContext.containerView().addSubview(toVC!)
+            transitionContext.containerView.addSubview(toVC!)
             // 设置锚点
             toVC!.layer.anchorPoint = CGPoint(x: 0.5, y: 0)
             
@@ -95,7 +95,7 @@ class TBHomePopoverAnimator: NSObject, UIViewControllerTransitioningDelegate, UI
             }
             
         } else {  ///收回
-            let fromVC = transitionContext.view(forKey: UITransitionContextFromViewKey)
+            let fromVC = transitionContext.view(forKey: UITransitionContextViewKey.from)
             
             UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: { () -> Void in
                 // 注意:由于CGFloat是不准确的, 所以如果写0.0会没有动画

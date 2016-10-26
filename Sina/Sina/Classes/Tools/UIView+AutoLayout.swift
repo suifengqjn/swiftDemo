@@ -36,7 +36,6 @@ public enum XC_AlignType {
         switch self {
             case .topLeft:
                 attributes.horizontals(.left, to: .left).verticals(.top, to: .top)
-                
                 if isInner {
                     return attributes
                 } else if isVertical {

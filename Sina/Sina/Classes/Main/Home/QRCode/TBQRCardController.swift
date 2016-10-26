@@ -21,7 +21,7 @@ class TBQRCardController: UIViewController {
         
         // 3.布局图片容器
 
-        iconView.backgroundColor = UIColor.red()
+        iconView.backgroundColor = UIColor.red
         
         // 4.生成二维码
         let qrcodeImage = creatQRCodeImage()
