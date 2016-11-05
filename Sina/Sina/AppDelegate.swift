@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        UINavigationBar.appearance().tintColor = UIColor.orange()
-        UITabBar.appearance().tintColor = UIColor.orange()
+        UINavigationBar.appearance().tintColor = UIColor.orange
+        UITabBar.appearance().tintColor = UIColor.orange
         
-        window = UIWindow(frame: UIScreen.main().bounds)
-        window?.backgroundColor = UIColor.white()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.backgroundColor = UIColor.white
         window?.rootViewController = SNRootController()
         window?.makeKeyAndVisible()
         
