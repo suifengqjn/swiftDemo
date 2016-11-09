@@ -16,7 +16,7 @@ class SNRootController: SNTabBarController {
         // Do any additional setup after loading the view.
         ///sdfsdfasdfasdfasd
         ///注意：IOS7 以后
-        tabBar.tintColor = UIColor.orange()
+        tabBar.tintColor = UIColor.orange
         
         // 动态添加子控制器
         buildDynamicContrillers()
@@ -48,7 +48,7 @@ class SNRootController: SNTabBarController {
             do {
                let dicArr =  try JSONSerialization.jsonObject(with: jsonData! as Data, options: JSONSerialization.ReadingOptions.mutableContainers)
                 
-                if dicArr.count < 4 {
+                if (dicArr as AnyObject).count < 4 {
                     
                     buildControllers()
                     return
