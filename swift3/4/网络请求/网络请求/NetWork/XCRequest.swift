@@ -36,14 +36,15 @@ class XCRequest: NSObject {
     
     
     
-    func getWithPath(path: String,paras: Dictionary<String,Any>?,completion: @escaping ((_ result: Any?, _ success:Bool) -> ())) {
-        
-        
-        
-        
+    func getWithPath(path: String,param: Dictionary<String,Any>?,completion: @escaping ((_ result: Any?, _ success:Bool) -> ())) {
         
         let url = URL(string: path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!)
-        
+        if let para = param {
+            //对参数进行处理
+            print(para)
+        } else {
+            
+        }
         let session = URLSession.shared
         
         let dataTask = session.dataTask(with: url!) { (data, respond, error) in
@@ -67,7 +68,6 @@ class XCRequest: NSObject {
     
     
     func postWithPath(path: String,paras: Dictionary<String,Any>?,success: @escaping ((_ result: Any) -> ()),failure: @escaping ((_ error: Error) -> ())) {
-        
         
         let url = URL(string: path)
         var request = URLRequest.init(url: url!)

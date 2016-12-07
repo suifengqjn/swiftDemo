@@ -17,6 +17,7 @@ class PhotoViewModel: NSObject {
 
     
     
+    
     /// - parameter pullup:     是否上拉刷新标记
     /// - parameter completion: 完成回调[网络请求是否成功, 是否刷新表格]
     func loadStatus(pullup: Bool, completion: @escaping (_ isSuccess: Bool) ->()){

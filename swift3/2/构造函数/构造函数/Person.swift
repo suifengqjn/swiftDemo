@@ -30,5 +30,4 @@ class Person: NSObject {
         super.init()
     }
     
-    
 }

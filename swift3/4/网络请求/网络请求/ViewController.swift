@@ -27,7 +27,7 @@ class ViewController: UIViewController {
             
         })
         
-        
+        XCRequest.shared.getWithPath(path: path, paras: nil, completion: {_,_ in })
         
     
     }
